@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  var c = this;
+	
+	c.notePos = "";
+	
+	c.selectNote = function (ind) {
+		c.notePos = ind;
+		var id = c.data.notes[ind].sys_id;
+		$rootScope.noteID = id;
+		$rootScope.$emit('selectNote', id);
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel-custom {
+	border-radius: 0 !important;
+  border-color: #ddd;
+}
+
+.panel-custom .panel-heading {
+  background: #5b5c5d;
+  border-radius: 0;
+  color: white;
+}
+
+.activeListItem {
+	background: #eeeeee;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>meeting_notes_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Meeting Notes List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.notes = [];
+	var meetingNotes = new GlideRecord('x_776893_meeting_n_notes');
+	meetingNotes.addQuery('created_by', gs.getUser().getID());
+	meetingNotes.orderByDesc("sys_created_on");
+	meetingNotes.setLimit(10);
+	meetingNotes.query();
+	
+	while(meetingNotes.next()) {
+		var noteItem = {};
+		// GlideSPScriptable server-side api $sp
+		$sp.getRecordDisplayValues(
+			noteItem, 
+			meetingNotes, 
+			"title, number, sys_created_on, sys_id");
+		
+		noteItem.note = meetingNotes.getValue('note').slice(0,20);
+		data.notes.push(noteItem);
+		console.log(noteItem);
+	}
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 07:14:11</sys_created_on>
+        <sys_id>729c20022f0b011067ed24c62799b6b3</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Meeting Notes List</sys_name>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_update_name>sp_widget_729c20022f0b011067ed24c62799b6b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 08:27:58</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-custom">
+	<div class="panel-heading clearfix">
+    <h3 class="panel-title pull-left">
+      Meeting Note List
+    </h3>
+  </div>
+  <div class="list-group">
+    <a 
+       class="list-group-item {{$index === c.notePos ? 'activeListItem' : null}}" 
+       ng-repeat="note in data.notes"
+       ng-click="c.selectNote($index)"
+    >
+    	<h4 class="list-group-item-heading">
+        {{note.title}}
+      </h4>
+      <p class="list-group-item-text">
+        {{note.note}}
+      </p>
+    </a>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
