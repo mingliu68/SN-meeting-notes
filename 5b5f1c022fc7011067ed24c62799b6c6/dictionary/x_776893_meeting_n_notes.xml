@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Notes" max_length="40" name="x_776893_meeting_n_notes" type="collection">
+        <element attributes="encode_utf8=false" label="Created by" max_length="32" name="created_by" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Follow Up" max_length="4000" name="follow_up" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" label="Note" max_length="4000" name="note" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Title" max_length="40" name="title" type="string"/>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="created_by"/>
+        </index>
+    </element>
+</database>
