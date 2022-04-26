@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Meeting Notes">a80220422fc7011067ed24c62799b614</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>SEPARATOR</link_type>
+        <map_page/>
+        <mobile_title>Notes</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name/>
+        <order>1</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 06:27:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a40220422fc7011067ed24c62799b618</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Notes</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_update_name>sys_app_module_a40220422fc7011067ed24c62799b618</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 06:27:52</sys_updated_on>
+        <timeline_page/>
+        <title>Notes</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</application>
+        <file_path/>
+        <instance_id>df562e2adbc9d700cbf6d5b0cf96191f</instance_id>
+        <instance_name>dev53994</instance_name>
+        <name>sys_app_module_a40220422fc7011067ed24c62799b618</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Meeting Notes">a80220422fc7011067ed24c62799b614</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>SEPARATOR</link_type><map_page/><mobile_title>Notes</mobile_title><mobile_view_name>Mobile</mobile_view_name><name/><order>1</order><override_menu_roles>false</override_menu_roles><query/><report/><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-25 06:27:52</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a40220422fc7011067ed24c62799b618</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Notes</sys_name><sys_overrides/><sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package><sys_policy/><sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope><sys_update_name>sys_app_module_a40220422fc7011067ed24c62799b618</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-25 06:27:52</sys_updated_on><timeline_page/><title>Notes</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>1940108576</payload_hash>
+        <record_name>Notes</record_name>
+        <reverted_from/>
+        <source>df5f1c022fc7011067ed24c62799b6c8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 06:27:52</sys_created_on>
+        <sys_id>200268c22fc7011067ed24c62799b6f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1805f67b1050000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 06:27:52</sys_updated_on>
+        <type>Module</type>
+        <update_guid>680268c270c70110733078f4ac473def</update_guid>
+        <update_guid_history>680268c270c70110733078f4ac473def:1940108576</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Notes">789fa6c62f03011067ed24c62799b6a3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 16:46:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>259ad2299608403988455be61f8954d9</sys_id>
+        <sys_metadata>a40220422fc7011067ed24c62799b618</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Notes</sys_name>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_scope_delete display_value="">3d8d7002e32c4ad08f7320791e00ab84</sys_scope_delete>
+        <sys_update_name>sys_app_module_a40220422fc7011067ed24c62799b618</sys_update_name>
+        <sys_update_version display_value="sys_app_module_a40220422fc7011067ed24c62799b618">200268c22fc7011067ed24c62799b6f0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 16:46:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

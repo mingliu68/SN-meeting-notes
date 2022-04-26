@@ -4,125 +4,167 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>a415fc0a2f0b011067ed24c62799b62b</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>393e22862f03011067ed24c62799b667</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>bd3e22862f03011067ed24c62799b667</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>2c15fc0a2f0b011067ed24c62799b62b</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>department</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>a015fc0a2f0b011067ed24c62799b62c</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>353e22862f03011067ed24c62799b668</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
-            <type/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>created_by</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>2815fc0a2f0b011067ed24c62799b62c</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>b93e22862f03011067ed24c62799b668</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>meeting_date</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>313e22862f03011067ed24c62799b669</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>ac15fc0a2f0b011067ed24c62799b62c</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>b53e22862f03011067ed24c62799b669</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>title</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>2415fc0a2f0b011067ed24c62799b62d</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>3d3e22862f03011067ed24c62799b669</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attendees</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>b13e22862f03011067ed24c62799b66a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>note</element>
-            <position>6</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>a815fc0a2f0b011067ed24c62799b62d</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>393e22862f03011067ed24c62799b66a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>follow_up</element>
-            <position>7</position>
+            <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>2015fc0a2f0b011067ed24c62799b62e</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>bd3e22862f03011067ed24c62799b66a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>sys_updated_on</element>
-            <position>8</position>
+            <position>10</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-04-25 07:51:09</sys_created_on>
-            <sys_id>a415fc0a2f0b011067ed24c62799b62e</sys_id>
+            <sys_created_on>2022-04-25 16:40:27</sys_created_on>
+            <sys_id>353e22862f03011067ed24c62799b66b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-04-25 07:51:09</sys_updated_on>
+            <sys_updated_on>2022-04-25 16:40:27</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-25 20:12:43</sys_created_on>
+            <sys_id>23cedf4a2fc3011067ed24c62799b686</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_776893_meeting_n_notes" sys_domain="global" view="Default view">1423e0062fc7011067ed24c62799b65b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-25 20:12:43</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
