@@ -5,21 +5,25 @@
 	var c = this;
 	
 	$rootScope.$on('selectNote', function(event, data) {
-		c.server.get({
-			action: 'getNote',
-			noteID: $rootScope.noteID
-		}).then(function(r) {
-			c.data.title = r.data.note.title;
-			c.data.note = r.data.note.note;
-			c.data.noteID = r.data.note.sys_id;
-			c.data.follow_up = r.data.note.follow_up;
-			c.data.department = r.data.note.department;
-			c.data.created = r.data.note.sys_created_on;
-			c.data.updated = r.data.note.sys_updated_on;
-			c.data.attendees = r.data.note.attendees;
-			c.data.meeting_date = r.data.note.meeting_date;
-			c.data.active = r.data.note.active;
-		})
+		if($rootScope.noteID === "") {
+			c.data = {}
+		} else {
+			c.server.get({
+				action: 'getNote',
+				noteID: $rootScope.noteID
+			}).then(function(r) {
+				c.data.title = r.data.note.title;
+				c.data.note = r.data.note.note;
+				c.data.noteID = r.data.note.sys_id;
+				c.data.follow_up = r.data.note.follow_up;
+				c.data.department = r.data.note.department;
+				c.data.created = r.data.note.sys_created_on;
+				c.data.updated = r.data.note.sys_updated_on;
+				c.data.attendees = r.data.note.attendees;
+				c.data.meeting_date = r.data.note.meeting_date;
+				c.data.active = r.data.note.active;
+			})
+		}
 	})
 	c.confirmDelete = function() {
 		spModal.confirm(
@@ -107,14 +111,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-25 07:14:59</sys_created_on>
         <sys_id>eacc68ce2fc7011067ed24c62799b60a</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>Meeting Notes Body</sys_name>
         <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
         <sys_update_name>sp_widget_eacc68ce2fc7011067ed24c62799b60a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-26 05:52:19</sys_updated_on>
+        <sys_updated_on>2022-04-26 18:14:14</sys_updated_on>
         <template><![CDATA[<div class="panel panel-custom" ng-show="c.data.noteID">
   <div class="panel-heading clearfix">
     <div class="row">
