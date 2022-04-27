@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <sp_column/>
+        <sp_container display_value="Meeting Note Home - Container 1">3c07680a2fc7011067ed24c62799b628</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 07:19:58</sys_created_on>
+        <sys_id>37ede8422f0b011067ed24c62799b682</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_update_name>sp_row_37ede8422f0b011067ed24c62799b682</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 07:19:58</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</application>
+        <file_path/>
+        <instance_id>df562e2adbc9d700cbf6d5b0cf96191f</instance_id>
+        <instance_name>dev53994</instance_name>
+        <name>sp_row_37ede8422f0b011067ed24c62799b682</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><sp_column/><sp_container display_value="Meeting Note Home - Container 1">3c07680a2fc7011067ed24c62799b628</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-25 07:19:58</sys_created_on><sys_id>37ede8422f0b011067ed24c62799b682</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package><sys_policy/><sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope><sys_update_name>sp_row_37ede8422f0b011067ed24c62799b682</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-25 07:19:58</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>-52900936</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>0e45a8c22fc7011067ed24c62799b6e6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 07:19:58</sys_created_on>
+        <sys_id>b7ede8422f0b011067ed24c62799b684</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1805f9764b00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 07:19:58</sys_updated_on>
+        <type>Row</type>
+        <update_guid>ffede842730b01104277b1fc991f7a83</update_guid>
+        <update_guid_history>ffede842730b01104277b1fc991f7a83:-52900936</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">63fda8422f0b011067ed24c62799b6c4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 07:20:14</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>0c9f3b26755f474898bcca43f40b7b39</sys_id>
+        <sys_metadata>37ede8422f0b011067ed24c62799b682</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_scope_delete display_value="">3d8d7002e32c4ad08f7320791e00ab84</sys_scope_delete>
+        <sys_update_name>sp_row_37ede8422f0b011067ed24c62799b682</sys_update_name>
+        <sys_update_version display_value="sp_row_37ede8422f0b011067ed24c62799b682">b7ede8422f0b011067ed24c62799b684</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 07:20:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

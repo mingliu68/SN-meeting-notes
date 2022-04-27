@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope) {
+  var c = this;
+	
+	c.isActive = true;
+	c.notePos = "";
+	
+	c.selectNote = function (ind, id) {
+		c.notePos = ind;
+		//var id = c.data.notes[ind].sys_id;
+		$rootScope.noteID = id;
+		$rootScope.$emit('selectNote', id);
+	}
+	
+	c.setActive = function (bool) {
+		if (c.isActive != bool) {
+			c.isActive = bool;
+			c.notePos = "";
+			$rootScope.noteID = "";
+			$rootScope.$emit('selectNote', "");
+		}
+	}
+	c.addNote = function () {
+		c.setActive(true);
+		c.server.get({
+			action: "addNote"
+		}).then(function(r) {
+			c.data.notes.unshift(r.data.newNote);
+			$rootScope.noteID = r.data.noteID;
+			$rootScope.$emit("selectNote", r.data.noteID);
+			c.notePos = 0;
+		})
+	}
+	
+	$rootScope.$on("deleteNote", function(event, data) {
+		
+		c.data.notes.splice(c.notePos, 1);
+		c.notePos = "";
+	})
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel-custom {
+	border-radius: 0 !important;
+  border-color: #ddd;
+}
+
+.panel-custom .panel-heading {
+  background: #5b5c5d;
+  border-radius: 0;
+  color: white;
+  padding: 10px 15px;
+}
+
+.panel-custom .panel-heading .panel-title {
+	padding-top: 5px;
+  font-size: 20px;
+}
+
+.activeListItem {
+	background: #eeeeee;
+}
+
+.panel-custom .panel-list-activeOption-container {
+  border-top: 0.1rem solid #ddd;
+  height: 36px;
+}
+
+.panel-custom .panel-list-activeOption-container div {
+	width: 50%;
+  background: #f9f9f9;
+  padding: 8px;
+  text-align: center;
+  float: left;
+  border-left: 0.1rem solid #ddd;
+  border-bottom: 0.1rem solid #ddd;
+}
+
+.panel-custom .panel-list-activeOption-container div.activeOption {
+	border-bottom: none;
+  background: #cccccc;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>meeting_notes_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Meeting Notes List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.notes = [];
+	var meetingNotes = new GlideRecord('x_776893_meeting_n_notes');
+	meetingNotes.addQuery('created_by', gs.getUser().getID());
+	meetingNotes.orderByDesc("sys_created_on");
+	/*meetingNotes.setLimit(10);*/
+	meetingNotes.query();
+	
+	while(meetingNotes.next()) {
+		var noteItem = {};
+		// GlideSPScriptable server-side api $sp
+		$sp.getRecordDisplayValues(
+			noteItem, 
+			meetingNotes, 
+			"title, number, sys_created_on, sys_id, active, meeting_date");
+		
+		noteItem.note = meetingNotes.getValue('note').slice(0,20);
+		data.notes.push(noteItem);
+	}
+	
+	if(input) {
+		if(input.action == "addNote") {
+			var newNote = new GlideRecord("x_776893_meeting_n_notes");
+			newNote.newRecord();
+			newNote.setValue("title", "New Title");
+			newNote.setValue("note", "New Note");
+			newNote.setValue("active", true);
+			newNote.setValue("created_by", gs.getUser().getID());
+			var id = newNote.insert();
+			data.newNote = {};
+			data.noteID = id;
+			$sp.getRecordValues(
+				data.newNote, 
+				newNote, 
+				"title, number, sys_created_on, note, sys_id, active, meeting_date");
+		}
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 07:14:11</sys_created_on>
+        <sys_id>729c20022f0b011067ed24c62799b6b3</sys_id>
+        <sys_mod_count>103</sys_mod_count>
+        <sys_name>Meeting Notes List</sys_name>
+        <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
+        <sys_update_name>sp_widget_729c20022f0b011067ed24c62799b6b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-26 19:43:00</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-custom">
+	<div class="panel-heading clearfix">
+    <h3 class="panel-title pull-left">
+      Meeting Notes
+    </h3>
+    <button 
+    	class="btn btn-default pull-right"
+    	ng-click="c.addNote()"
+    >
+      <span style="color: #5b5c5d" class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div class="panel-body">
+    <input
+    	placeholder="Search"
+      class="form-control"
+      ng-model="noteSearch"
+    />
+  </div>
+  <!-- select between active notes or archived (inactive) notes -->
+  <div class="panel-list-activeOption-container">
+   	<div  
+      class="{{ c.isActive === true ? 'activeOption' : null }}"
+    	ng-click="c.setActive(true)" 
+      style="border-left: none;">
+      Active
+     </div>
+     <div 
+      class="{{ c.isActive === false ? 'activeOption' : null }}" 
+      ng-click="c.setActive(false)">
+        Archived
+     </div>
+  </div>
+  <div class="list-group" ng-model="c.isActive">
+    <a 
+       ng-repeat="note in data.notes | filter : { 'active' : c.isActive } | filter: noteSearch"
+       class="list-group-item {{$index === c.notePos ? 'activeListItem' : null}}" 
+       ng-click="c.selectNote($index, note.sys_id)"
+       index = {{$index}}
+    >
+    	<h4 class="list-group-item-heading">
+        {{note.title}}
+      </h4>
+      <p class="list-group-item-text">
+        {{note.note}} 
+      </p>
+    </a>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
