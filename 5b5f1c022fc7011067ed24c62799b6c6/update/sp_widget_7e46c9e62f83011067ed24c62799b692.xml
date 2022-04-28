@@ -35,14 +35,22 @@
 		}
 	}
 	
-	c.addNote = function () {
+	$rootScope.$on("createNewNote", function(event, data) {
+		c.addNote(data);
+	})
+	
+	c.addNote = function (data) {
 		c.setActive("active");
 		c.server.get({
-			action: "addNote"
+			action: "addNote",
+			department: data.department,
+			attendees: data.attendees,
+			meeting_date: data.meeting_date
 		}).then(function(r) {
 			c.data.notes.active.unshift(r.data.newNote);
 			$rootScope.noteID = r.data.noteID;
 			$rootScope.$emit("selectNote", r.data.noteID);
+			c.addingNewNote(false);
 			c.state.notePos = 0;
 		})
 	}
@@ -155,6 +163,9 @@
 		if(input.action == "addNote") {
 			var newNote = new GlideRecord("x_776893_meeting_n_notes");
 			newNote.newRecord();
+			newNote.setValue("department", input.department);
+			newNote.setValue("attendees", input.attendees);
+			newNote.setValue("meeting_date", input.meeting_date);
 			newNote.setValue("title", "New Title");
 			newNote.setValue("note", "New Note");
 			newNote.setValue("active", true);
@@ -175,14 +186,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-26 22:23:21</sys_created_on>
         <sys_id>7e46c9e62f83011067ed24c62799b692</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>x_Meeting Notes List_1</sys_name>
         <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
         <sys_update_name>sp_widget_7e46c9e62f83011067ed24c62799b692</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-28 06:33:40</sys_updated_on>
+        <sys_updated_on>2022-04-28 09:47:42</sys_updated_on>
         <template><![CDATA[<div class="panel panel-custom">
 	<div class="panel-heading clearfix">
     <h3 class="panel-title pull-left">

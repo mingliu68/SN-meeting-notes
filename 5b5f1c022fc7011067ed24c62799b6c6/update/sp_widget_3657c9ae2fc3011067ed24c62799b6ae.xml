@@ -4,7 +4,6 @@
         <client_script><![CDATA[function($rootScope, $scope, spModal) {
 	var c = this;
 	c.addingNewNote = false;
-	
 
 	$rootScope.$on('selectNote', function(event, data) {
 		if($rootScope.noteID === "") {
@@ -33,13 +32,26 @@
 	})
 	
 	c.createNewNote = function () {
-		// todo check for required fields
-		c.data.newNote = {
-			"department" : c.data.department, 
-			"attendees" : c.data.attendees,
-			"meeting_date" : c.data.meeting_data
+		var department = $('#department').select2('val');
+		var attendees = $('#attendees').select2('val');
+		var meetingDate = document.getElementById("meetingDate").value;
+		if(department && attendees.length != 0 && meetingDate) {
+			c.data.newNote = {
+				"department" : department, 
+				"attendees" : attendees,
+				"meeting_date" : meetingDate
+			}
+			$rootScope.$emit("createNewNote", c.data.newNote);
+			$('#department').select2('val', "");
+			$('#attendees').select2('val', "");
+			document.getElementById("meetingDate").value = "";
+		} else {
+			spModal.confirm(
+				"Please complete the form before creating new note"
+			).then(function(confirmed) {
+				return;
+			})
 		}
-		$rootScope.$emit("createNewNote", c.data.newNote);
 	}
 	
 	c.updateNote = function() {
@@ -222,14 +234,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-26 22:28:00</sys_created_on>
         <sys_id>3657c9ae2fc3011067ed24c62799b6ae</sys_id>
-        <sys_mod_count>139</sys_mod_count>
+        <sys_mod_count>177</sys_mod_count>
         <sys_name>x_Meeting Notes Body_1</sys_name>
         <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
         <sys_update_name>sp_widget_3657c9ae2fc3011067ed24c62799b6ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-28 07:16:09</sys_updated_on>
+        <sys_updated_on>2022-04-28 09:52:05</sys_updated_on>
         <template><![CDATA[<div class="panel panel-custom" ng-model="c.addingNewNote" ng-show="c.addingNewNote">
   <div class="panel-heading clearfix">
     <h3 className="panel-title pull-left" style="margin: 0.5rem 0;font-size: 2rem;">
@@ -264,11 +276,23 @@
       </div>
     <div class="col-xs-6">
       Meeting Date:
+<!--
+      <sp-date-picker
+      	ng-model="c.data.meeting_date"
+        sn-change=""
+        field="c.meeting_date"        
+      >
+      </sp-date-picker>
+-->
+       
       <input 
+        type="date"
       	class="form-control"
-        id="note-meetingDate"  
-        ng-model="c.data.meeting_data"
-      />
+        id="meetingDate"  
+        placeholder="yyyy-dd-mm"
+        value=""
+        required
+      /> 
     </div>
     <div 
     	class="col-xs-6 customButton customRegular" 
