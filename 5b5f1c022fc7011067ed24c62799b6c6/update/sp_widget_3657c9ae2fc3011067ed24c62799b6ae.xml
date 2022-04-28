@@ -3,6 +3,7 @@
         <category>custom</category>
         <client_script><![CDATA[function($rootScope, $scope, spModal) {
 	var c = this;
+	c.addingNewNote = false;
 	
 
 	$rootScope.$on('selectNote', function(event, data) {
@@ -26,6 +27,20 @@
 			})
 		}
 	})
+	
+	$rootScope.$on("addingNewNote", function(event, data) {
+		c.addingNewNote = data;
+	})
+	
+	c.createNewNote = function () {
+		// todo check for required fields
+		c.data.newNote = {
+			"department" : c.data.department, 
+			"attendees" : c.data.attendees,
+			"meeting_date" : c.data.meeting_data
+		}
+		$rootScope.$emit("createNewNote", c.data.newNote);
+	}
 	
 	c.updateNote = function() {
 		c.server.get({
@@ -180,9 +195,6 @@
 			}
 			
 			if(input.action === "updateActive") {
-				//console.log("active ? " + note.active + ", type : " + typeof note.active)
-				//var active = (note.active === true) ? false : true;
-				
 				note.setValue('active', input.updateActive);
 				note.update();
 				data.note = {};
@@ -210,15 +222,64 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-26 22:28:00</sys_created_on>
         <sys_id>3657c9ae2fc3011067ed24c62799b6ae</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>139</sys_mod_count>
         <sys_name>x_Meeting Notes Body_1</sys_name>
         <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
         <sys_update_name>sp_widget_3657c9ae2fc3011067ed24c62799b6ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-27 07:16:18</sys_updated_on>
-        <template><![CDATA[<div class="panel panel-custom" ng-show="c.data.noteID">
+        <sys_updated_on>2022-04-28 07:16:09</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-custom" ng-model="c.addingNewNote" ng-show="c.addingNewNote">
+  <div class="panel-heading clearfix">
+    <h3 className="panel-title pull-left" style="margin: 0.5rem 0;font-size: 2rem;">
+      Adding new note
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-12">
+      Department: 
+        <sn-record-picker
+        	id="department"
+          field="department"
+          table="'cmn_department'"
+          display-field="'name'"
+          value-field="'sys_id'"
+          search-fields="'name'"
+          page-size="100">
+        </sn-record-picker>
+    </div>
+    <div class="col-xs-12">
+      Attendees: 
+        <sn-record-picker
+        	id="attendees"
+          field="attendees"
+          table="'sys_user'"
+          display-field="'name'"
+          value-field="'sys_id'"
+          search-fields="'name'"
+          page-size="100"
+          multiple="true">
+        </sn-record-picker>
+      </div>
+    <div class="col-xs-6">
+      Meeting Date:
+      <input 
+      	class="form-control"
+        id="note-meetingDate"  
+        ng-model="c.data.meeting_data"
+      />
+    </div>
+    <div 
+    	class="col-xs-6 customButton customRegular" 
+      style="margin-top: 2rem"
+      ng-click="c.createNewNote()"
+    >
+      Create New Note
+    </div>
+  </div>
+</div>
+<div class="panel panel-custom" ng-show="c.data.noteID">
   <div class="panel-heading clearfix">
     <div class="row">
       <div class="col-xs-12">
@@ -240,20 +301,6 @@
       <div class="col-xs-12">
        	<h5>Attendees : {{c.data.attendees}}</h5>
       </div>
-      <!--
-      <div class="col-xs-12 {{c.state.attendeeOption == false ? 'customHide' : 'customShow' }}">
-        <sn-record-picker
-        	id="attendees"
-          field="attendees"
-          table="'sys_user'"
-          display-field="'name'"
-          value-field="'sys_id'"
-          search-fields="'name'"
-          page-size="100"
-          multiple="true">
-        </sn-record-picker>
-      </div>
-		-->
     </div>
   </div> 
    <div class="panel-body">

@@ -3,21 +3,35 @@
         <category>custom</category>
         <client_script><![CDATA[function($rootScope, $scope) {
   var c = this;
+	$rootScope.addingNewNote = false;
+	
 	c.state = {"isActive": "active", "notePos": ""}
 	// c.data.notes = {"active" : [active item array], "archive" : [archive item array]}
 
 	c.selectNote = function (ind, id) {
+		if ($rootScope.addingNewNote === true && id != "") {
+			c.addingNewNote(false);
+		}
 		c.state.notePos = ind;
 		$rootScope.noteID = id;
 		$rootScope.$emit('selectNote', id);
 	}
 	
 	c.setActive = function (isActive) {
+
 		if (c.state.isActive != isActive) {
 			c.state.isActive = isActive;
 			c.state.notePos = "";
 			$rootScope.noteID = "";
 			$rootScope.$emit('selectNote', "");
+		}
+	}
+	
+	c.addingNewNote = function (bool) {
+		if ($rootScope.addingNewNote !== bool){
+			$rootScope.$emit("addingNewNote", bool); 
+			$rootScope.addingNewNote = bool;
+			c.selectNote(c.notePos, "")
 		}
 	}
 	
@@ -161,14 +175,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-26 22:23:21</sys_created_on>
         <sys_id>7e46c9e62f83011067ed24c62799b692</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>x_Meeting Notes List_1</sys_name>
         <sys_package display_value="Meeting Notes" source="x_776893_meeting_n">5b5f1c022fc7011067ed24c62799b6c6</sys_package>
         <sys_policy/>
         <sys_scope display_value="Meeting Notes">5b5f1c022fc7011067ed24c62799b6c6</sys_scope>
         <sys_update_name>sp_widget_7e46c9e62f83011067ed24c62799b692</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-27 02:07:01</sys_updated_on>
+        <sys_updated_on>2022-04-28 06:33:40</sys_updated_on>
         <template><![CDATA[<div class="panel panel-custom">
 	<div class="panel-heading clearfix">
     <h3 class="panel-title pull-left">
@@ -176,7 +190,7 @@
     </h3>
     <button 
     	class="btn btn-default pull-right"
-    	ng-click="c.addNote()"
+    	ng-click="c.addingNewNote(true)"
     >
       <span style="color: #5b5c5d" class="glyphicon glyphicon-plus"></span>
     </button>
